@@ -1,0 +1,21 @@
+{
+  "name": "bot-de-vendas-discord",
+  "version": "1.0.0",
+  "description": "Bot de vendas para Discord com Pix Mercado Pago, cargos automáticos, assinaturas, saldo, cupons e relatórios.",
+  "main": "src/index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "register": "node src/register-commands.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.26.2",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "nanoid": "^5.0.9"
+  }
+}

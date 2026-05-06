@@ -1,0 +1,33 @@
+{
+  "orders": [],
+  "withdrawals": [],
+  "subscriptions": [],
+  "coupons": {},
+  "settings": {},
+  "plans": {
+    "vip_7d": {
+      "id": "vip_7d",
+      "name": "VIP 7 dias",
+      "price": 5.99,
+      "durationDays": 7,
+      "description": "Assinatura VIP por 7 dias",
+      "roleId": ""
+    },
+    "vip_30d": {
+      "id": "vip_30d",
+      "name": "VIP 30 dias",
+      "price": 15.99,
+      "durationDays": 30,
+      "description": "Assinatura VIP por 30 dias",
+      "roleId": ""
+    },
+    "vip_lifetime": {
+      "id": "vip_lifetime",
+      "name": "VIP vitalício",
+      "price": 49.99,
+      "durationDays": 36500,
+      "description": "Assinatura VIP vitalícia",
+      "roleId": ""
+    }
+  }
+}

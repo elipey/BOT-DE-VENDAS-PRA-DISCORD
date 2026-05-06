@@ -1,119 +1,101 @@
-# 🤖 BOT DE VENDAS DISCORD
+# BOT DE VENDAS DISCORD
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Node.js-18+-green?style=for-the-badge&logo=node.js">
-  <img src="https://img.shields.io/badge/Discord.js-v14-blue?style=for-the-badge&logo=discord">
-  <img src="https://img.shields.io/badge/Mercado%20Pago-Pix-00B1EA?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Open%20Source-GitHub-black?style=for-the-badge&logo=github">
-</p>
+Bot open source de vendas para Discord com Pix Mercado Pago, cargos automáticos por plano, assinaturas, saldo, retiradas, cupons, relatórios e painel de configuração.
 
-Bot de vendas para Discord com integração ao Mercado Pago via Pix, entrega automática de cargos, comandos administrativos e sistema simples de configurar. Projeto feito em Node.js + Discord.js pensado tanto para uso próprio quanto para estudos e futuras melhorias.
+## Aviso de segurança
 
----
+Este repositório não deve conter tokens reais. Nunca publique `.env`, `data/db.json` ou arquivos dentro de `data/backups/`.
 
-# ✨ Recursos
+Se você já publicou algum token sem querer, gere um novo token no Discord Developer Portal e no Mercado Pago, porque o token antigo deve ser considerado vazado.
 
-* 💸 Integração com Mercado Pago
-* 📱 Pagamento via Pix
-* 🎖️ Entrega automática de cargos
-* ⚙️ Sistema simples de configuração
-* 🛒 Estrutura para loja dentro do Discord
-* 📊 Sistema de logs
-* 🔒 Uso de variáveis `.env`
-* 🧩 Fácil de modificar e expandir
-* 🚀 Código open source
+## Requisitos
 
----
+- Node.js 22.12.0 ou superior
+- Uma aplicação/bot no Discord Developer Portal
+- Uma conta/app do Mercado Pago com Access Token
 
-# 📦 Tecnologias utilizadas
-
-* Node.js
-* Discord.js v14
-* Mercado Pago SDK
-* Express
-* dotenv
-
----
-
-# 🚀 Como instalar
-
-## 1. Clone o repositório
-
-```bash
-git clone https://github.com/SEU-USUARIO/NOME-DO-REPOSITORIO.git
-```
-
----
-
-## 2. Entre na pasta
-
-```bash
-cd NOME-DO-REPOSITORIO
-```
-
----
-
-## 3. Instale as dependências
+## Instalação
 
 ```bash
 npm install
 ```
 
----
+Copie o arquivo de exemplo:
 
-## 4. Configure o arquivo `.env`
+```bash
+cp .env.example .env
+```
 
-Copie o `.env.example` e coloque suas informações:
+No Windows PowerShell, pode usar:
+
+```powershell
+copy .env.example .env
+notepad .env
+```
+
+Preencha as variáveis no `.env`:
 
 ```env
-DISCORD_TOKEN=
-CLIENT_ID=
-GUILD_ID=
-MERCADO_PAGO_ACCESS_TOKEN=
-WEBHOOK_URL=
+DISCORD_TOKEN=COLOQUE_SEU_TOKEN_DO_BOT_AQUI
+CLIENT_ID=ID_DA_APPLICATION_DO_BOT
+GUILD_ID=ID_DO_SEU_SERVIDOR
 PORT=3000
+WEBHOOK_URL=http://localhost:3000
+MERCADO_PAGO_ACCESS_TOKEN=COLOQUE_SEU_ACCESS_TOKEN_AQUI
+MAINTENANCE=false
 ```
 
----
-
-## 5. Inicie o bot
+## Registrar comandos slash
 
 ```bash
-node .
+npm run register
 ```
 
----
-
-# 🛠️ Futuras melhorias
-
-* Dashboard web
-* Painel de configuração dentro do Discord
-* Banco de dados melhor
-* Sistema de cupons
-* Carrinho de compras
-* Sistema de estoque
-* Suporte a mais gateways de pagamento
-
----
-
-# ⚠️ Aviso
-
-Esse projeto foi criado para fins de aprendizado e automação de vendas dentro do Discord. Use de forma responsável e respeitando os termos das plataformas utilizadas.
-
----
-
-# ❤️ Contribuições
-
-Sinta-se livre para modificar, melhorar ou adaptar o projeto para o seu servidor.
-
-Se quiser contribuir:
+## Iniciar o bot
 
 ```bash
-fork -> editar -> pull request
+npm start
 ```
 
----
+## Desenvolvimento
 
-# ⭐ Apoio
+```bash
+npm run dev
+```
 
-Se esse projeto te ajudou, deixar uma estrela no GitHub ajuda bastante 🚀
+## Comandos principais
+
+- `/configurar` — abre o painel de configuração do bot.
+- `/painel` — envia o painel de vendas.
+- `/testar_entrega` — testa entrega de cargo sem Pix real.
+- `/saldo` — mostra total vendido, retirado e saldo local.
+- `/retiradovalor` — registra uma retirada manual.
+- `/assinaturas` — lista assinaturas ativas.
+- `/cliente` — consulta histórico de um usuário.
+- `/criarcupom` — cria cupom de desconto.
+- `/removercupom` — remove cupom.
+- `/cupons` — lista cupons.
+- `/relatorio` — gera TXT ou CSV.
+- `/manutencao` — pausa/libera novas compras.
+- `/mensagemplano` — define mensagem personalizada para quando um plano for aprovado.
+- `/cancelarvip` — remove VIP de um usuário.
+
+## Observações importantes
+
+- O bot precisa ficar ligado para checar pagamentos pendentes.
+- Se estiver hospedado localmente, `localhost` não é acessível pelo Mercado Pago externamente. Mesmo assim, o bot checa pagamentos pendentes periodicamente.
+- O cargo do bot precisa estar acima dos cargos VIP no Discord.
+- Use `npm run register` sempre que adicionar ou alterar comandos slash.
+
+## Arquivos que não vão para o GitHub
+
+Estes arquivos estão no `.gitignore` por segurança:
+
+- `.env`
+- `node_modules/`
+- `data/db.json`
+- `data/backups/*.json`
+
+## Licença
+
+Defina uma licença antes de publicar, por exemplo MIT.
