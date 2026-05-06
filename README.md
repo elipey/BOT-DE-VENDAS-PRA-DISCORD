@@ -87,15 +87,3 @@ npm run dev
 - O cargo do bot precisa estar acima dos cargos VIP no Discord.
 - Use `npm run register` sempre que adicionar ou alterar comandos slash.
 
-## Arquivos que não vão para o GitHub
-
-Estes arquivos estão no `.gitignore` por segurança:
-
-- `.env`
-- `node_modules/`
-- `data/db.json`
-- `data/backups/*.json`
-
-## Licença
-
-Defina uma licença antes de publicar, por exemplo MIT.
