@@ -2,12 +2,6 @@
 
 Bot open source de vendas para Discord com Pix Mercado Pago, cargos automáticos por plano, assinaturas, saldo, retiradas, cupons, relatórios e painel de configuração.
 
-## Aviso de segurança
-
-Este repositório não deve conter tokens reais. Nunca publique `.env`, `data/db.json` ou arquivos dentro de `data/backups/`.
-
-Se você já publicou algum token sem querer, gere um novo token no Discord Developer Portal e no Mercado Pago, porque o token antigo deve ser considerado vazado.
-
 ## Requisitos
 
 - Node.js 22.12.0 ou superior
